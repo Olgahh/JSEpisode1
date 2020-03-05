@@ -6,6 +6,12 @@
  */
 function greet(name) {
   // Your code here
+  if (name){
+    console.log(`Hello ${name}`);
+  }
+  else {
+    console.log("Hello");
+  }
 }
 
 /**
@@ -15,6 +21,12 @@ function greet(name) {
  */
 function isOdd(n) {
   // Your code here
+  if ( n%2 !== 0) {
+    return true;
+  }
+  else {
+    return false;
+  }
 }
 
 /**
@@ -30,6 +42,12 @@ function isOdd(n) {
  */
 function oddsSmallerThan(n) {
   // Your code here
+  if ( n%2 === 0 ){
+    return n/2;
+  }
+  else {
+    return (n-1)/2;
+  }
 }
 
 /**
@@ -44,6 +62,12 @@ function oddsSmallerThan(n) {
  */
 function squareOrDouble(n) {
   // Your code here
+  if ( n%2 === 0){
+    return n*2;
+  }
+  else {
+    return Math.pow(n,2);
+  }
 }
 
 /**
@@ -64,6 +88,13 @@ function squareOrDouble(n) {
  */
 function ageFromBirthDate(birthDate) {
   const _MS_PER_YEAR = 1000 * 60 * 60 * 24 * 365;
+  let year = birthDate.substring(0, 4);
+  let month = birthDate.substring(4, 6);
+  let day = birthDate.substring(6);
+  let myDate = new Date(parseInt(year), parseInt(month), parseInt(day)); 
+  let age = Math.floor((new Date() - myDate) / _MS_PER_YEAR);
+  return age;
+
 
   // Your code here
 }
